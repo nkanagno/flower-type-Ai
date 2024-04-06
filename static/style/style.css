@@ -1,0 +1,110 @@
+
+html{
+    overflow: auto;
+}
+
+
+
+/*% Header styling */
+h1{
+    font-size: 3rem;
+    text-align: center;
+    padding: 30px;
+    color:rgb(64, 1, 66);
+}
+
+
+
+/*^ Form: inputs[text + submit] */
+form {
+    text-align: center;
+}
+input[type=text]{
+    width: 15%;
+    margin: 10px 0px 10px 42%;
+    height: 30px;
+    border-radius:15px ;
+    font-size: 1rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+input[type=submit]{
+    width: 200px;
+    height: 60px;
+    color: rgb(5, 69, 72);
+    transition: 0.3s ease-in-out;
+    background-color: rgb(10, 24,43);
+}
+input[type=submit]:hover {
+    transition: 0.3s ease-in-out;
+    color: rgb(222, 215, 224);
+    cursor: pointer;
+    background-color: rgb(63, 70, 79);
+}
+
+/*$prediction results*/
+#prediction-result{
+    padding-top: 20px;
+    text-align: center;
+}
+
+
+
+/*& Navigation Bar Styling*/
+
+
+nav {
+    background-color: #eee;
+    padding: 10px;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+    
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+a:hover {
+    color: #000;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown:hover .submenu {
+    display: block;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    padding: 10px;
+    top: 100%;
+    left: 0;
+}
+
+.submenu li {
+    margin-bottom: 5px;
+}
+
+.submenu li a:hover {
+   background: #333;
+}

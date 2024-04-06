@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <title>Flower Species Prediction</title>
+    <link rel="stylesheet" href="./static/style/style.css"/>
+</head>
+  <body>
+    {% include "navbar.html" %}
+    <h1>Flower Species Prediction <br>AI</h1>
+    <form id="prediction-form">
+      <label >Sepal Length:</label> <input type="text" name="sepal_length" /><br />
+      <label >Sepal Width:</label> <input type="text" name="sepal_width" /><br />
+      <label >Petal Length:</label> <input type="text" name="petal_length" /><br />
+      <label >Petal Width:</label> <input type="text" name="petal_width" /><br />
+      <input type="submit" value="Make a Prediction"></button>
+    </form>
+    <div id="prediction-result"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#prediction-form").submit(function (e) {
+          e.preventDefault();
+          $.ajax({
+            type: "POST",
+            url: "/predict",
+            data: $("#prediction-form").serialize(),
+            success: function (response) {
+              $("#prediction-result").html(
+                "<p>Prediction: " +
+                  response.prediction +
+                  '</p><br><img src="./static/images/' +
+                  response.flower_name +
+                  '.jpg" alt="'+ response.flower_name+'.jpg">'
+              );
+            },
+            error: function (error) {
+              console.log(error);
+            },
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
