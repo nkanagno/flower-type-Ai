@@ -65,6 +65,6 @@ def Virginica():
     return render_template('flower_types/Virginica.html')
 
 
-
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False,port='0.0.0.0')
+    
